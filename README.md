@@ -1,1 +1,1 @@
-# comp5347
+Run dateType.js before run server.js
