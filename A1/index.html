@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+     <meta charset="utf-8">
+     <title>COMP5347 Assignment One</title>
+     <link rel="stylesheet" href="reset.css"/>
+     <link rel="stylesheet" href="index.css"/>
+     <script type="text/javascript" src="index.js"></script>
+     <script type="text/javascript" src="data.json"></script>
+  </head>
+  <body>
+    <form method="get" action="">
+    <div id="searchBox">
+      <div id="left">
+        <input id="searchArea" type="text" name="title">
+        <button id="search" type="button">Search</button>
+        <select>
+          <option value="category">Category</option>
+          <option value="art">Art</option>
+          <option value="action and adventure">Action and Adventure</option>
+          <option value="health">Health</option>
+          <option value="science fiction">Science Fiction</option>
+          <option value="science history">Science History</option>
+          <option value="computer">Computer</option>
+        </select>
+        <button id="filter" type="button">Filter</button>
+      </div>
+      <div id="right">
+        <button id="add" type="button">Add to cart</button>
+        <button id="reset" type="button">Reset the cart</button>
+        <img id="imgCart" src="images/cart.png" alt="shopping cart">
+        <span id="cartNumber">(0)</span>
+      </div>
+      <div class="clear">
+      </div>
+    </div>
+    <div id="listBox">
+      <table>
+        <caption></caption>
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Year</th>
+            <th>Price</th>
+            <th>Publisher</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    <div id="resetBox">
+      <div>
+        <p id="boxContent">Do you make sure to empty your shopping cart?</p>
+      </div>
+      <div id="boxButton">
+        <button class="confirmBtn" id="confirm" type="button" name="button">Reset the cart</button>
+        <button class="confirmBtn" id="cancel" type="button" name="button">Cancel</button>
+      </div>
+    </div>
+    </form>
+  </body>
+</html>
