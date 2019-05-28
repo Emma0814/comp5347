@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>COMP5347 Group7 Assignment2</title>
+  <link href="/css/main.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="/js/overall.js"></script>
+  <script src="/js/author.js"></script>
+  <script src="/js/individual.js"></script>
+  	<script>
+	$(function(){
+		$(".nav_title li").click(function(){
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active");
+			var index=$(this).index();
+			$("#function_shown .function").eq(index).addClass("selected");
+			$("#function_shown .function").eq(index).siblings().removeClass("selected");
+		})
+	})
+	</script>
+</head>
+<body>
+
+	<!-- Website Title -->
+	<div class="top">
+		<h1 id="logoName">ArticleInsight</h1>
+  </div>
+
+	<!-- Welcome User & logout-->
+	<div class="top">
+		<h2>Welcome: <%= username%></h2>
+		<button id="logout_btn">Log out</button>
+	</div>
+
+
+    <!-- Nav bar -->
+	<div class="nav_bar">
+  	<ul class="nav_title">
+  		<li class="active"><a id="overall_bar">Overall Analysis</a></li>
+  		<li><a id="individual_bar">Individual Analysis</a></li>
+  		<li><a id="article_bar">Article Analysis</a></li>
+  	</ul>
+  </div>
+
+    <!-- Function -->
+    <div id="function_shown">
+
+    	<!-- Overall -->
+    	<div id="overall" class="function selected">
+        <h2>Overall Analysis</h2>
+      	<div id="OverallRevSearch">
+      		<div id="OverallSearchResult">
+      			<h2>Search Functions</h2>
+    			</div>
+      		<h3>Search for &nbsp &nbsp <input class="input_box" type="number" min="1" id="OverallRevNum" value="2"> &nbsp articles with the &nbsp
+  				  <select class="input_box" id="order">
+  	      		<option value="-1">Highest</option>
+  	      		<option value="1">Lowest</option>
+       			</select>
+  				  &nbsp revisions &nbsp<button id="OverallRevSearchBu">Search</button>
+      		</h3>
+      		<table id="OverallRevSearchResult"></table>
+        </div>
+  	  	<div id="OverallRevRegistered">
+  	    	<h3>The article edited by largest number of registered users :</h3>
+  	    	<div id="OverallRevSearchResultL" class="result"></div>
+  	    	<h3>The article edited by smallest number of registered users :</h3>
+  	    	<div id="OverallRevSearchResultS" class="result"></div>
+  	   	</div>
+  	   	<div id="OverallHistory">
+  	    	<h3>The two articles has the longest history :</h3>
+  	    	<div id="OverallHistoryResultL" class="result"></div>
+  	    	<h3>The article has the shortest history :</h3>
+  	    	<div id="OverallHistoryResultS" class="result"></div>
+  	   	</div>
+  	   	<div id="OverallCharts">
+  	   		<h2>Overall Charts</h2>
+     		</div>
+  	   	<div id="OverallBar">
+  	    	<h3>The bar chart of revision number yearly distributed by different type of users &nbsp &nbsp <button id="OverallBarBu">Switch to the bar chart</button></h3>
+  	   	</div>
+  	   	<div id="OverallPie">
+  	    	<h3> Pie chart of total revision by different type of users &nbsp &nbsp <button id="OverallPieBu">Switch to the pie chart</button></h3>
+  	    	<div id="OverallChartResult" class="chart"></div>
+  	   	</div>
+    	</div>
+
+      <!-- Individual -->
+    	<div id="individual_part" class="function">
+			<h2>Individual Analytics</h2>
+    		<div id="individual_search">
+    			Search Article: &nbsp
+    			<input class="input_box" list="individual_articles" name="individual_article" id="individual_search_value">
+    			<datalist id="individual_articles"></datalist>&nbsp&nbsp&nbsp&nbsp
+    			<span>Year from <input class="input_box" type="number" min="1990" max="2019" id="from_year" value="1990"> to <input class="input_box" type="number" min="2002" max="2020" id="to_year" value="2020"></span>&nbsp&nbsp&nbsp&nbsp
+    			<button id="individual_search_btn">Search</button>
+    		</div>
+    		<div id="individual_result">
+    			<div id="individual_info">
+	    			<h2>Summary Information:</h2>
+			        <p>Title: <span id="individual_title"></span></p>
+			        <p>Total number of revisions: <span id="individual_revisions_num"></span></p>
+			        <p>Top 5 regular users: </p>
+			    </div>
+		        <div id="individual_top_users">
+		          <table id ="individual_users_table"></table>
+		        </div>
+    		</div>
+    		<div id="individual_charts">
+    			<h2>Charts</h2>
+		        <div id="individual_chart">
+		          <h3>Bar chart: Year and user type distribution &nbsp &nbsp &nbsp<button id="individual_show1">Show it</button></h3>
+		          <div id="individual_chart1_img"></div>
+		          <h3>Pie chart: User type distribution &nbsp &nbsp &nbsp<button id="individual_show2">Show it</button></h3>
+		          <div id="individual_chart2_img"></div>
+		          <h3>Bar chart: Year distribution by users</h3>
+				  <div id="individual_users"></div>
+					<div class="lowBtn" ><button id="individual_show3">Show it</button></div>
+		          <div id="individual_chart3_img"></div>
+		        </div>
+    		</div>
+    	</div>
+
+      <!-- Article -->
+    	<div id="author_part" class="function">
+    		<h2>Author Analytics</h2>
+    		<div id="csearch">
+                <h4>Please input an author name (e.g. Andreasegde)</h4>
+                <input class="input_box" list="article_browsers" id="article_input">
+                <button id="article_search_btn">Search</button>
+            </div>
+            <div id="article_result">
+	            <div id="article_show_authors">
+		            <p>Author:</p>
+	                <div id="article_author">
+			          <table id ="article_author_table"></table>
+			        </div>
+	            </div>
+                <div id="article_show_more">
+					<button id="article_moreinfo_btn">Show More Info</button>
+		        </div>
+            </div>
+    	</div>
+
+    </div>
+</body>
+</html>

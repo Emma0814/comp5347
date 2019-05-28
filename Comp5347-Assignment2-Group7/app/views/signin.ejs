@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ArticleInsight | Login</title>
+    <link href="/css/landingpage.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/signin.js"></script>
+
+</head>
+
+<body>
+<div>
+
+    <h1>ArticleInsight</h1>
+
+    <div>
+        <div id="login_div">
+            <h3>Login to ArticleInsight</h3>
+            <p id="errorInfo"><%= error %></p>
+            <form id="signinform" role="form" action="/login" method="post">
+                <div class="signinform">
+                    <input type="text" class="formdisplay" placeholder="Username" name="username" id="username" >
+                    <p id="username_err" class="signin_err">Please enter the valid email address</p>
+                    <input type="password" class="formdisplay"  name="password" id="password" placeholder="Password" >
+                    <p id="password_err" class="signin_err">Password must include at least 6 characters</p>
+                </div>
+                <p><input type="submit"  id="submit1" value="Login"></p>
+                <p><small>Do not have an account?</small></p>
+                <p><input type="button" id="regist" value="Create a Account"></p>
+               
+            </form>
+            <div id="tab_overview">
+                    <div class="tab">
+                        <ul class="tab_title">
+                            <li class="active"><a >Overall Analysis</a></li>
+                            <li ><a >Individual Analysis</a></li>
+                            <li ><a >Author Analysis</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab_content">
+                        <div id="content1" class="content selected">
+                            <p>1.Display titles of the two(or other number changed by user) articles with highest and lowest number of revisions</p>
+                            <p>2.Display the article edited by largest and smallest group of registered users</p>
+                            <p>3.Display the top 2 articles with the longest and shortest history (measured by age)</p>
+                            <p>4.A bar chart of revision number distribution by year and by user type across the whole dataset</p>
+                            <p>5.A pie chart of revision number distribution by user type across the whole data set</p>
+                            <div>
+                                <img src="/img/sample1.jpg" style="width: 900px"/>
+                                <img src="/img/sample2.jpg"/>
+                            </div>
+                        </div>
+                        <div id="content2" class="content">
+                            <p>1.A simple drop-down list, for user to select an article from a list of all available article titles</p>
+                            <p>2.Display the title,the total number of revisions and the top 5 regular users ranked by total revision numbers on this article, and the respective revision numbers</p>
+                            <p>3.A bar chart of revision number distributed by year and by user type for this article</p>
+                            <p>4.A pie chart of revision number distribution based on user type for this article</p>
+                            <p>5.A bar chart of revision number distributed by year made by one or a few of the top 5 users for this article</p>
+                            <div>
+                                <img src="/img/sample5.png" style="width: 900px"/>
+                                <img src="/img/sample3.png" style="width: 600px; height: 500px"//>
+                                <img src="/img/sample4.png" style="width: 900px"//>
+                            </div>
+                        </div>
+                        <div id="content3" class="content">
+                            <p>1.Display all articles that are changed (or have revisions made) by a specific author</p>
+                            <p>2.Display the articles’ names along with number of revisions made by that author next to it and time stamps of all revisions made to an article</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

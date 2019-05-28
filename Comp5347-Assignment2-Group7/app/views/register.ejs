@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Articleinsight | Register</title>
+    <link href="/css/landingpage.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/register.js"></script>
+</head>
+
+<body>
+<div>
+            <h1>ArticleInsight</h1>
+
+            </div>
+  <div>
+        <div id="register_div">
+            <div>
+                <h3>Register to ArticleInsight</h3>
+                <p id= "errorInfo"> <%= error %></p>
+                <form  role="form" id="registerform" action="/register" method="post">
+                    <div class="registerform">
+                        <input type="text" class="formdisplay register_input" placeholder="Firstname" name="firstname" id="firstname">
+                        <p id="firstname_err" class="register_err">Name must be letters</p>
+                        <input type="text" class="formdisplay register_input" placeholder="Lastname" name="lastname" id="lastname">
+                        <p id="lastname_err" class="register_err">Name must be letters</p>
+                        <input type="text" class="formdisplay register_input" placeholder="Username(Email address)" name="username" id="username">
+                        <p id="username_err" class="register_err">Email address must be valid</p>
+                        <input type="password" class="formdisplay register_input" placeholder="Password" name="password" id="password" >
+                        <p id="password_err" class="register_err">Password must include at least 6 characters</p>
+                        <input type="password" class="formdisplay register_input" placeholder="Confirm password" name="passwordCheck" id="passwordCheck" >
+                        <p id="pwdconfirm_err" class="register_err">Password does not match</p>
+                    </div>
+
+                    <p><input type="submit"  id="register"  value="Register"></p>
+
+                    <p><input type="button"  id="reset"  value="Reset"></p>
+
+                    <p><small>Already have an account?</small></p>
+                    <input type="button" id="login"  value="Login">
+                </form>
+            </div>
+        </div>
+    </div>
+   </div>
+</body>
+
+</html>
